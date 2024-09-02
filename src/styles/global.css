@@ -1,0 +1,26 @@
+body
+{
+    background-color: #FEFFD2;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    
+}
+
+.footer-class
+{
+  padding: 20px;
+  background-color: #FFBF78;
+}
+
+#root
+{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

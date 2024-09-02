@@ -7,9 +7,23 @@ function App() {
 
   return (
     <>
-      
+      <Game />
     </>
   )
+}
+
+const Game = () =>
+{
+  return(
+    <>
+    </>
+  ) 
+}
+
+const NavBar = () =>
+{
+  <>
+  </>
 }
 
 export default App
