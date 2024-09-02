@@ -17,8 +17,8 @@ const Game = () =>
   return(
     <>
     <div>
-      <div className='container '>
-         
+      <div className='navBarContainer '>
+         <h1>Cookie Clicker Game!</h1>
       </div>
     </div>
       
