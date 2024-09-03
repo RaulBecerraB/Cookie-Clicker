@@ -21,23 +21,34 @@ const Game = () =>
          <h1>Cookie Clicker Game!</h1>
       </div>
       <div className='white-board'>
-        <div className='text-container'>
-          <h2>L</h2>
-        </div>
-        <div style={{border:'blue',borderRadius:'20px'}}>
-          <div className='upgrades-container'>
-          </div>
-        </div>
+          <Container title={'STORE'}></Container>
+          <Container title={'COUNTER'}></Container>
+          <Container title={'UPGRADES'}></Container>
       </div>
     </div>
-      
     </>
   ) 
+}
+
+const Container = ({title}) =>
+{
+  return (
+    <div>
+      <div className='text-container'>
+          <h2>{title}</h2>
+      </div>
+
+      <div className='upgrades-container'>
+          
+      </div>
+    </div>
+  )
 }
 
 const NavBar = () =>
 {
   <>
+  
   </>
 }
 
