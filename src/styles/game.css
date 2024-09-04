@@ -1,66 +1,67 @@
+:root {
+    --background-color-white: #ffffff;
+    --background-color-orange: #FFBF78;
+    --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    --border-radius: 10px;
+    --margin: 20px auto;
+    --padding-small: 5px 15px;
+    --padding-medium: 15px;
+    --padding-large: 20px;
+}
+
+.common-container {
+    margin: var(--margin);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.display-container {
+    background-color: var(--background-color-white);
+    padding: var(--padding-large);
+    border: 2px solid var(--background-color-orange);
+    width: auto;
+}
+
+.display-container,
+.text-container,
+.counter-container,
+.navbar-container {
+    margin: var(--margin);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.text-container {
+    background-color: var(--background-color-orange);
+    padding: var(--padding-small);
+    width: 200px;
+}
+
+.counter-container {
+    background-color: var(--background-color-orange);
+    padding: var(--padding-medium);
+    width: auto;
+}
+
+.navbar-container {
+    background-color: var(--background-color-white);
+    padding: var(--padding-medium);
+    width: 90%;
+}
+
+
 .centerBg
 {
     padding-top: 60vh;
     padding-left: 20%;
     background-image: url(../assets/whiteBoard.svg);
     border: 20px black;
-}
-
-.keep-vertical
-{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.upgrades-container
-{
-    background-color: #ffffff;
-    margin: 20px auto;
-    padding: 20px;
-    width: auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    border: 2px solid #FFBF78;
-
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.text-container
-{
-    background-color: #FFBF78;
-    margin: 20px auto;
-    padding: 5px 15px 5px 15px;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.counter-container
-{
-    background-color: #FFBF78;
-    margin: 20px auto;
-    padding:15px;
-    width: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
-}
-
-.navbar-container
-{
-    background-color: white;
-    margin: 20px auto;
-    padding: 15px;
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .white-board

@@ -38,7 +38,7 @@ const Container = ({title}) =>
           <h2>{title}</h2>
       </div>
 
-      <div className='upgrades-container'>
+      <div className='display-container'>
           
       </div>
     </div>
