@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { Cookie } from './components/Cookie'
 
 
 
@@ -59,17 +60,6 @@ const Container = ({title}) =>
       </div>
     </div>
   )
-}
-
-const Cookie = (widht, height) =>
-{
-  
-return(
-<>
-  <img src="./src/assets/cookie.svg" alt="cookie" width={150} height={150} />
-</>
-)
-
 }
 
 const NavBar = () =>
