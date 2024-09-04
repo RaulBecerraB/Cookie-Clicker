@@ -20,11 +20,11 @@ const Game = () =>
     <>
     <div>
       <div className='navbar-container '>
-         <h1>Cookie Clicker Game!</h1>
+         <h2>Cookie Clicker Game!</h2>
       </div>
       <div className='white-board'>
           <Container title={'STORE'}></Container>
-          <Cookie/>
+          <CookieContainer />
           <Container title={'UPGRADES'}></Container>
       </div>
     </div>
@@ -32,12 +32,26 @@ const Game = () =>
   ) 
 }
 
+const CookieContainer = () =>
+{
+  return(
+    <div>
+      <div className='text-container'>
+          <h3>Click Counts</h3>
+      </div>
+      <div className='cookie-container'>
+      <Cookie />
+      </div>
+    </div>
+  )
+}
+
 const Container = ({title}) =>
 {
   return (
     <div>
       <div className='text-container'>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
       </div>
 
       <div className='display-container'>
