@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Cookie = ({widht, height,onCookieClick}) =>
+export const Cookie = ({onCookieClick}) =>
 {
     const [isClicked, setIsClicked] = useState(false);
 
