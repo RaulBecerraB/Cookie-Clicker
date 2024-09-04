@@ -78,3 +78,19 @@
     justify-content: space-around;
 
 }
+
+@keyframes clickAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); /* Tamaño más grande */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .cookie-clicked {
+    animation: clickAnimation 0.2s ease-in-out;
+  }

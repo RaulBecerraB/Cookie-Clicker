@@ -17,6 +17,10 @@ function App() {
 
 const Game = () =>
 {
+  const [cookieClicks,setCookieClicks] = useState(0)
+
+  const increment = () => setCookieClicks(cookieClicks +1)
+
   return(
     <>
     <div>
@@ -25,7 +29,7 @@ const Game = () =>
       </div>
       <div className='white-board'>
           <Container title={'STORE'}></Container>
-          <CookieContainer />
+          <CookieContainer counter = {cookieClicks} onCookieClick={increment}/>
           <Container title={'UPGRADES'}></Container>
       </div>
     </div>
@@ -33,15 +37,16 @@ const Game = () =>
   ) 
 }
 
-const CookieContainer = () =>
+const CookieContainer = ({counter,onCookieClick}) =>
 {
   return(
     <div>
       <div className='text-container'>
+          <h3>{counter}</h3>
           <h3>Click Counts</h3>
       </div>
       <div className='cookie-container'>
-      <Cookie />
+        <Cookie onCookieClick = {onCookieClick}/>
       </div>
     </div>
   )
