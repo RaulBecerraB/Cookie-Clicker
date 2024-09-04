@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,7 +24,7 @@ const Game = () =>
       </div>
       <div className='white-board'>
           <Container title={'STORE'}></Container>
-          <Container title={'COUNTER'}></Container>
+          <Cookie/>
           <Container title={'UPGRADES'}></Container>
       </div>
     </div>
@@ -43,6 +45,17 @@ const Container = ({title}) =>
       </div>
     </div>
   )
+}
+
+const Cookie = (widht, height) =>
+{
+  
+return(
+<>
+  <img src="./src/assets/cookie.svg" alt="cookie" width={150} height={150} />
+</>
+)
+
 }
 
 const NavBar = () =>
