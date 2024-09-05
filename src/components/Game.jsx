@@ -7,8 +7,9 @@ import { Container } from './Container'
 export const Game = () =>
     {
       const [cookieClicks,setCookieClicks] = useState(0)
-    
-      const increment = () => setCookieClicks(cookieClicks +1)
+      const [addition,setAddition] = useState(2)
+
+      const increment = () => setCookieClicks(cookieClicks + addition)
     
       return(
         <>
