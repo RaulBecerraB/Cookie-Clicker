@@ -9,76 +9,10 @@
     --padding-large: 20px;
 }
 
-.common-container 
-{
-    margin: var(--margin);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.cookie-container
-{
-    margin: var(--margin);
-    text-align: center;
-}
-
 .flex-column {
     display: flex;
     flex-direction: column;
     flex: 1;
-}
-
-.display-container {
-    margin-top: 15px;
-    background-color: var(--background-color-white);
-    padding: var(--padding-large);
-    border: 2px solid var(--background-color-orange);
-    width: auto;
-    min-width: 250px;
-}
-
-.display-container,
-.text-container,
-.counter-container,
-.navbar-container {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.text-container {
-    text-align: center;
-    background-color: var(--background-color-orange);
-    padding: var(--padding-small);
-    width: auto;
-}
-
-.counter-container {
-    text-align: center;
-    background-color: var(--background-color-orange);
-    padding: var(--padding-small);
-    width: auto;
-}
-
-.navbar-container {
-    margin: 20px auto;
-    background-color: var(--background-color-white);
-    padding: var(--padding-medium);
-    width: 90%;
-}
-
-.white-board
-{
-    background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    
-    flex-wrap: wrap;
-    display: flex;
-    gap: 100px;
-    justify-content: center;
 }
 
 @keyframes clickAnimation {
