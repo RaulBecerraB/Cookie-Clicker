@@ -53,8 +53,9 @@
 }
 
 .counter-container {
+    text-align: center;
     background-color: var(--background-color-orange);
-    padding: var(--padding-medium);
+    padding: var(--padding-small);
     width: auto;
 }
 
@@ -73,8 +74,6 @@
     width: 90%;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
-    
     
     flex-wrap: wrap;
     display: flex;
