@@ -23,7 +23,7 @@ export const Game = () =>
           </div>
           <div className='white-board'>
               <Container title={'STORE'} >
-                <StoreButton title={'Click Multiplier'} onButtonClick={incrementMultiplier}/>
+                <StoreButton title={'Click Multiplier'} price={'20'} onButtonClick={incrementMultiplier}/>
               </Container>
               <CookieContainer counter = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
