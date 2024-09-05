@@ -2,15 +2,18 @@ import { useState } from "react";
 
 import { CookieContainer } from './CookieContainer'
 import { Container } from './Container'
+import StoreButton from "./StoreButton";
 
 
 export const Game = () =>
     {
       const [cookieClicks,setCookieClicks] = useState(0)
-      const [addition,setAddition] = useState(2)
+      const [multiplier,setMultiplier] = useState(2)
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
 
-      const increment = () => setCookieClicks(cookieClicks + addition + temporalPowerUp)
+      const incrementClickCounter = () => setCookieClicks(cookieClicks + multiplier + temporalPowerUp)
+
+      const incrementMultiplier = () => setMultiplier(multiplier + 1)
     
       return(
         <>
@@ -20,9 +23,9 @@ export const Game = () =>
           </div>
           <div className='white-board'>
               <Container title={'STORE'} >
-                
+                <StoreButton title={'Click Multiplier'} onButtonClick={incrementMultiplier}/>
               </Container>
-              <CookieContainer counter = {cookieClicks} onCookieClick={increment}/>
+              <CookieContainer counter = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
                 
               </Container>
