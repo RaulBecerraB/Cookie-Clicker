@@ -19,9 +19,13 @@ export const Game = () =>
              <h2>Cookie Clicker Game!</h2>
           </div>
           <div className='white-board'>
-              <Container title={'STORE'}></Container>
+              <Container title={'STORE'} >
+                
+              </Container>
               <CookieContainer counter = {cookieClicks} onCookieClick={increment}/>
-              <Container title={'UPGRADES'}></Container>
+              <Container title={'UPGRADES'}>
+                
+              </Container>
           </div>
         </div>
         </>

@@ -1,4 +1,4 @@
-export const Container = ({title}) =>
+export const Container = ({title, children}) =>
     {
       return (
         <div>
@@ -7,7 +7,7 @@ export const Container = ({title}) =>
           </div>
     
           <div className='display-container'>
-              
+            {children}
           </div>
         </div>
       )
