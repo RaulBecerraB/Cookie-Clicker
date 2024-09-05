@@ -2,8 +2,8 @@ import React from 'react'
 
 const StoreButton = ({price,title,onButtonClick}) => {
   return (
-    <button className='text-container' onClick={onButtonClick}>
-        {title}
+    <button className='store-button-container' onClick={onButtonClick}>
+        <div>{title}</div>
     </button>
   )
 }
