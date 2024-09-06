@@ -23,9 +23,9 @@ export const Game = () =>
           </div>
           <div className='white-board'>
               <Container title={'STORE'} >
-                <StoreButton title={'Click Multiplier'} price={'5'} counter={cookieClicks} onButtonClick={incrementMultiplier}/>
+                <StoreButton title={'Click Multiplier'} price={'5'} points={cookieClicks} onButtonClick={incrementMultiplier}/>
               </Container>
-              <CookieContainer counter = {cookieClicks} onCookieClick={incrementClickCounter}/>
+              <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
                 
               </Container>
