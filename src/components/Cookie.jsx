@@ -15,7 +15,7 @@ export const Cookie = ({onCookieClick}) =>
     const triggerCookieAnimation = () => 
     {
       enlargeCookieSize();
-      setTimeout(() => resetCookieSize(false), 100); 
+      setTimeout(() => resetCookieSize(false), 20); 
     };
 
     const enlargeCookieSize = () => setIsClicked(true);

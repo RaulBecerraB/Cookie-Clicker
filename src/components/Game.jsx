@@ -8,7 +8,7 @@ import StoreButton from "./StoreButton";
 export const Game = () =>
     {
       const [cookieClicks,setCookieClicks] = useState(0)
-      const [multiplier,setMultiplier] = useState(2)
+      const [multiplier,setMultiplier] = useState(1)
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
 
       const incrementClickCounter = () => setCookieClicks(cookieClicks + multiplier + temporalPowerUp)
