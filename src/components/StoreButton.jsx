@@ -1,16 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
 
-const StoreButton = ({price,title,onButtonClick}) => {
+const StoreButton = ({price,title,counter,onButtonClick}) => {
 
 // NOTE: Should i consider always doing animations via JS or CSS
-
+// Program the logic of the button blocking by  the price and the counter
 const [isClicked, setIsClicked] = useState(false);
+const [buttonDisabled,setButtonDisabled] = useState(false);
+
+// TODO: refactor this
 
 const handleClick = () =>
 {
-  triggerButtonAnimation();
-  buttonCallback();
+  if (counter >= price)
+  {
+    // This uses the button once and then disables it
+    triggerButtonAnimation();
+    buttonCallback();
+    setButtonDisabled(true);
+  }  
 }
 
 const triggerButtonAnimation = () =>
@@ -26,7 +34,8 @@ const resetButtonSize = () => setIsClicked(false);
 const buttonCallback = () => onButtonClick();
 
 return (
-  <button className={isClicked ? 'clicked-store-button-container' : 'store-button-container'} onClick={handleClick}>
+  <button className={isClicked ? 'clicked-store-button-container' : 'store-button-container'} 
+  onClick={handleClick} disabled = {buttonDisabled}>
     <div style={{fontSize:'1.4rem',fontWeight:'bold'}}>
       {title}
     </div>
