@@ -4,11 +4,23 @@ export const Cookie = ({onCookieClick}) =>
 {
     const [isClicked, setIsClicked] = useState(false);
 
-    const handleClick = () => {
-      setIsClicked(true);
-      onCookieClick();
-      setTimeout(() => setIsClicked(false), 100); // Duración de la animación
+    const handleClick = () => 
+    {
+      triggerCookieAnimation();
+      buttonCallback();
     };
+
+    const buttonCallback = () => onCookieClick();
+
+    const triggerCookieAnimation = () => 
+    {
+      enlargeCookieSize();
+      setTimeout(() => resetCookieSize(false), 100); 
+    };
+
+    const enlargeCookieSize = () => setIsClicked(true);
+
+    const resetCookieSize = () => setIsClicked(false);
   
     return (
       <div onClick={handleClick} className={isClicked ? 'cookie-clicked' : ''}>

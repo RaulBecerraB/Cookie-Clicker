@@ -1,17 +1,41 @@
 import React from 'react'
+import { useState } from 'react'
 
 const StoreButton = ({price,title,onButtonClick}) => {
-  return (
-    <button className='store-button-container' onClick={onButtonClick}>
-        <div style={{fontSize:'1.4rem',fontWeight:'bold'}}>
-          {title}
-        </div>
-        <div style={{fontSize:'1.0rem',fontWeight:'semi-bold',marginTop:'0.5rem'}}>
-          {price}
-          <img src="./src/assets/cookie.svg" alt="cookie" width='15' height='15' style={{marginLeft:'0.5rem',marginBottom:'-0.1rem'}}/>
-        </div>
-    </button>
-  )
+
+// NOTE: Should i consider always doing animations via JS or CSS
+
+const [isClicked, setIsClicked] = useState(false);
+
+const handleClick = () =>
+{
+  triggerButtonAnimation();
+  buttonCallback();
+}
+
+const triggerButtonAnimation = () =>
+{
+  enlargeButtonSize();
+  setTimeout(() => resetButtonSize(false), 250);
+}
+
+const enlargeButtonSize = () => setIsClicked(true);
+
+const resetButtonSize = () => setIsClicked(false);
+
+const buttonCallback = () => onButtonClick();
+
+return (
+  <button className={isClicked ? 'clicked-store-button-container' : 'store-button-container'} onClick={handleClick}>
+    <div style={{fontSize:'1.4rem',fontWeight:'bold'}}>
+      {title}
+    </div>
+    <div style={{fontSize:'1.0rem',fontWeight:'semi-bold',marginTop:'0.5rem'}}>
+      {price}
+      <img src="./src/assets/cookie.svg" alt="cookie" width='15' height='15' style={{marginLeft:'0.5rem',marginBottom:'-0.1rem'}}/>
+    </div>
+  </button>
+)
 }
 
 export default StoreButton
