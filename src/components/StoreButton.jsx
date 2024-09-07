@@ -12,14 +12,23 @@ const [buttonDisabled,setButtonDisabled] = useState(false);
 
 const handleClick = () =>
 {
-  if (points >= price)
+  if(canAffordPurchase())
   {
-    // This uses the button once and then disables it
-    triggerButtonAnimation();
-    buttonCallback();
-    setButtonDisabled(true);
-  }  
+    processPurchase();
+  }
 }
+
+const canAffordPurchase = () => points >= price ? true : false
+
+const processPurchase = () =>
+{
+  // This uses the button once and then disables it
+  triggerButtonAnimation();
+  buttonCallback();
+  setButtonDisabled(true);
+}
+
+const disableButton = () => setButtonDisabled(true);
 
 const triggerButtonAnimation = () =>
 {
