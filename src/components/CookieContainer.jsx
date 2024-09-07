@@ -1,12 +1,12 @@
 import { Cookie } from './Cookie'
 
-export const CookieContainer = ({counter,onCookieClick}) =>
+export const CookieContainer = ({points,onCookieClick}) =>
     {
       return(
         
         <div>
           <div className='counter-container'>
-              <div style={{color:'white', fontSize:'32px',fontWeight:'bold'}}>{counter}</div>
+              <div style={{color:'white', fontSize:'32px',fontWeight:'bold'}}>{points}</div>
               <div style={{color:'white', fontSize:'24px',fontWeight:'bold'}}>
                 Click Counts
               </div>
