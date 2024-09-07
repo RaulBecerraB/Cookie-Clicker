@@ -25,7 +25,7 @@ const processPurchase = () =>
   // This uses the button once and then disables it
   triggerButtonAnimation();
   buttonCallback();
-  setButtonDisabled(true);
+  disableButton();
 }
 
 const disableButton = () => setButtonDisabled(true);
@@ -43,7 +43,8 @@ const resetButtonSize = () => setIsClicked(false);
 const buttonCallback = () => onButtonClick();
 
 return (
-  <button className={isClicked ? 'clicked-store-button-container' : 'store-button-container'} 
+  <button className={`${isClicked ? 'clicked-store-button-container' : 'store-button-container'} 
+  ${buttonDisabled ? 'disabled-store-button-container':'store-button-container'}`} 
   onClick={handleClick} disabled = {buttonDisabled}>
     <div style={{fontSize:'1.4rem',fontWeight:'bold'}}>
       {title}
