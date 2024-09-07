@@ -3,12 +3,8 @@ import { useState } from 'react'
 
 const StoreButton = ({price,title,points,onButtonClick}) => {
 
-// NOTE: Should i consider always doing animations via JS or CSS
-// Program the logic of the button blocking by  the price and the points
 const [isClicked, setIsClicked] = useState(false);
 const [buttonDisabled,setButtonDisabled] = useState(false);
-
-// TODO: refactor this
 
 const handleClick = () =>
 {
