@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 import { CookieContainer } from './CookieContainer'
 import { Container } from './Container'
@@ -12,22 +13,32 @@ export const Game = () =>
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
       const [AutomaticClicksEnabled,setAutomaticClicksEnabled] = useState(false)
       
-      const incrementClickCounter = () => setCookieClicks(cookieClicks + multiplier + temporalPowerUp)
+      const incrementClickCounter = () => {
+        setCookieClicks((prevCookieClicks) => prevCookieClicks + multiplier + temporalPowerUp);
+      };
+    
+      const incrementMultiplier = () => {
+        setMultiplier((prevMultiplier) => prevMultiplier + 1);
+      };
+    
+      const enableAutomaticClicks = () => {
+        setAutomaticClicksEnabled(true);
+      };
 
-      const incrementMultiplier = () => setMultiplier(multiplier + 1)
+      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled;
 
-      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled === true ? true:false
-
-      const automaticClicks =  () => setTimeout(() => setCookieClicks(cookieClicks + 1), 1000);
-
-      
-
-      if (isAutomaticClicksEnabled())
-        {
-          automaticClicks();
+      // useEffect para controlar los clicks automáticos
+      useEffect(() => {
+        let interval;
+        if (isAutomaticClicksEnabled()) {
+          interval = setInterval(() => {
+            setCookieClicks((prevCookieClicks) => prevCookieClicks + 1);
+          }, 1000);
         }
-
-      const enableAutomaticClicks = () => setAutomaticClicksEnabled(true)
+    
+        // Limpia el intervalo cuando se desactiva el automático o cuando se desmonta el componente
+        return () => clearInterval(interval);
+      }, [isAutomaticClicksEnabled]); // Escucha cambios en automaticClicksEnabled
 
       return(
         <>
