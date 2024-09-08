@@ -14,11 +14,11 @@ export const Game = () =>
       const [AutomaticClicksEnabled,setAutomaticClicksEnabled] = useState(false)
       
       const incrementClickCounter = () => {
-        setCookieClicks((prevCookieClicks) => prevCookieClicks + multiplier + temporalPowerUp);
+        setCookieClicks(cookieClicks + multiplier + temporalPowerUp);
       };
     
       const incrementMultiplier = () => {
-        setMultiplier((prevMultiplier) => prevMultiplier + 1);
+        setMultiplier(multiplier + 1);
       };
     
       const enableAutomaticClicks = () => {
@@ -32,8 +32,9 @@ export const Game = () =>
         let interval;
         if (isAutomaticClicksEnabled()) {
           interval = setInterval(() => {
-            setCookieClicks((prevCookieClicks) => prevCookieClicks + 1);
+            setCookieClicks(cookieClicks + 1);
           }, 1000);
+          console.log(cookieClicks);
         }
     
         // Limpia el intervalo cuando se desactiva el automático o cuando se desmonta el componente
