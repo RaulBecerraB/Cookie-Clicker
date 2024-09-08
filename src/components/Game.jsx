@@ -25,7 +25,7 @@ export const Game = () =>
         setAutomaticClicksEnabled(true);
       };
 
-      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled;
+      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled ? true : false;
 
       // useEffect para controlar los clicks automáticos
       useEffect(() => {
