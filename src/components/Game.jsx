@@ -25,16 +25,17 @@ export const Game = () =>
         setAutomaticClicksEnabled(true);
       };
 
+      const startAutomaticClicks = () => {
+        return setInterval(() => { setCookieClicks(cookieClicks + 1);}, 1000);
+      }
+
       const isAutomaticClicksEnabled = () => AutomaticClicksEnabled ? true : false;
 
-      // useEffect para controlar los clicks automáticos
+      // useEffect creates just ONE interval instead of multiple intervals per render.
       useEffect(() => {
         let interval;
         if (isAutomaticClicksEnabled()) {
-          interval = setInterval(() => {
-            setCookieClicks(cookieClicks + 1);
-          }, 1000);
-          console.log(cookieClicks);
+          interval = startAutomaticClicks();
         }
     
         // Limpia el intervalo cuando se desactiva el automático o cuando se desmonta el componente
