@@ -15,8 +15,7 @@
 {
     margin-top: 15px;
     background-color: var(--background-color-white);
-    padding-left: var(--padding-medium);
-    padding-right: var(--padding-medium);
+    padding: var(--padding-medium);
     border: 2px solid var(--background-color-orange);
     width: auto;
     max-width: 100px;
@@ -75,7 +74,7 @@
 .blank-container
 .disabled-store-button-container
 {
-    margin: 20px auto;
+    margin: 3% auto;
     background-color: var(--background-color-white);
     padding: var(--padding-medium);
     width: 100%;
