@@ -15,7 +15,8 @@
 {
     margin-top: 15px;
     background-color: var(--background-color-white);
-    padding: var(--padding-large);
+    padding-left: var(--padding-medium);
+    padding-right: var(--padding-medium);
     border: 2px solid var(--background-color-orange);
     width: auto;
     max-width: 100px;
@@ -53,14 +54,6 @@
     background-color: var(--background-color-white);
     padding: var(--padding-medium);
     width: 90%;
-}
-
-.storeButton-container 
-{
-    margin: 20px auto;
-    background-color: var(--background-color-white);
-    padding: var(--padding-medium);
-    width: 100%;
 }
 
 .white-board
