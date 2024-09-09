@@ -14,22 +14,17 @@ export const Game = () =>
       const [AutomaticClicksEnabled,setAutomaticClicksEnabled] = useState(false)
       
       const incrementClickCounter = () => {
-        setCookieClicks(cookieClicks + multiplier + temporalPowerUp);
+        setCookieClicks(cookieClicks + multiplier + temporalPowerUp)
       };
     
-      const incrementMultiplier = () => {
-        setMultiplier(multiplier + 1);
-      };
+      const incrementMultiplier = () => setMultiplier(multiplier + 1)
     
-      const enableAutomaticClicks = () => {
-        setAutomaticClicksEnabled(true);
-      };
+      const enableAutomaticClicks = () => setAutomaticClicksEnabled(true)
 
-      const startAutomaticClicks = () => {
-        return setInterval(() => { setCookieClicks(cookieClicks + 1);}, 1000);
-      }
+      const startAutomaticClicks = () => setInterval(() => { setCookieClicks(cookieClicks + 1);}, 1000)
+      
 
-      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled ? true : false;
+      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled ? true : false
 
       // useEffect creates just ONE interval instead of multiple intervals per render.
       useEffect(() => {
