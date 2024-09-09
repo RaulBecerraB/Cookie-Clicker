@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const UpgradeButton = ({title,price,points,onButtonClick}) => {
     const [isClicked, setIsClicked] = useState(false)
+    const [buttonDisabled,setButtonDisabled] = useState(true);
+
+    const canAffordPurchase = () => points >= price ? true : false
+    
+    const enableButton = () => setButtonDisabled(false)
+    
+    const disableButton = () => setButtonDisabled(true)
 
     const handleClick = () =>
     {
       if(canAffordPurchase())
       {
-        processPurchase();
+        processPurchase()
+        console.log(buttonDisabled)
       }
     }
-    
-    const canAffordPurchase = () => points >= price ? true : false
     
     const processPurchase = () =>
     {
@@ -32,9 +38,23 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
     const resetButtonSize = () => setIsClicked(false);
     
     const buttonCallback = () => onButtonClick();
+
+    useEffect(() => {
+      if (canAffordPurchase())
+        {
+          enableButton()
+        }
+      else
+        {
+          disableButton()
+        }
+      }
+      ,[canAffordPurchase,enableButton])
     
     return (
-      <button className={isClicked ? 'clicked-store-button-container' : 'store-button-container'} onClick={handleClick}>
+      <button className={`${isClicked ? 'clicked-store-button-container' : 'store-button-container'} 
+       ${buttonDisabled ? 'disabled-store-button-container':'store-button-container'}`} onClick={handleClick}
+       disabled={buttonDisabled}>
         <div style={{fontSize:'1.4rem',fontWeight:'bold'}}>
           {title}
         </div>

@@ -121,17 +121,16 @@ export const Game = () =>
         <div>
           <div className='navbar-container '>
              <h2>Cookie Clicker Game!</h2>
-             {console.log(clickPosition)}
           </div>
           <div className='white-board'>
-              <Container title={'STORE'} >
-                <StoreButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier}/>
-                <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
-              </Container>
-              <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
-              <Container title={'UPGRADES'}>
+              <Container title={'UPGRADES'} >
                 <UpgradeButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier} />
                 <UpgradeButton title={'Automatic Clciks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
+              </Container>
+              <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
+              <Container title={'STORE'}>
+                <StoreButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier}/>
+                <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>
           </div>
 
