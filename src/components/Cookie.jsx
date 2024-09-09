@@ -4,13 +4,13 @@ export const Cookie = ({onCookieClick}) =>
 {
     const [isClicked, setIsClicked] = useState(false);
 
-    const handleClick = () => 
+    const handleClick = (e) => 
     {
       triggerCookieAnimation();
-      buttonCallback();
+      buttonCallback(e);
     };
 
-    const buttonCallback = () => onCookieClick();
+    const buttonCallback = (e) => onCookieClick(e);
 
     const triggerCookieAnimation = () => 
     {

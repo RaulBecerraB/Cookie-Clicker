@@ -7,7 +7,7 @@
 
 .cookie-container
 {
-    margin: var(--margin);
+    padding-top: 30%;
     text-align: center;
 }
 
