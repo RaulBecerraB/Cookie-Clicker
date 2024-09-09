@@ -3,7 +3,8 @@ import { useState } from 'react'
 
 const UpgradeButton = ({title,price,points,onButtonClick}) => {
     const [isClicked, setIsClicked] = useState(false)
-    const [buttonDisabled,setButtonDisabled] = useState(true);
+    const [buttonDisabled,setButtonDisabled] = useState(true)
+    const [buttonLevel,setButtonLevel] = useState(0)
 
     const canAffordPurchase = () => points >= price ? true : false
     
@@ -16,7 +17,7 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
       if(canAffordPurchase())
       {
         processPurchase()
-        console.log(buttonDisabled)
+        setButtonLevel(buttonLevel + 1)
       }
     }
     
@@ -61,6 +62,7 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
         <div style={{fontSize:'1.0rem',fontWeight:'semi-bold',marginTop:'0.5rem'}}>
           {price}
           <img src="./src/assets/cookie.svg" alt="cookie" width='15' height='15' style={{marginLeft:'0.5rem',marginBottom:'-0.1rem'}}/>
+          {' Lvl   ' + buttonLevel}
         </div>
       </button>
     )
