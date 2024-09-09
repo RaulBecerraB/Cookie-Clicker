@@ -129,8 +129,9 @@ export const Game = () =>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'STORE'}>
+                {/* HAY QUE REPLANTEAR LOS BOTONES DE TIENDA
                 <StoreButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier}/>
-                <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
+                <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>*/}
               </Container>
           </div>
 
