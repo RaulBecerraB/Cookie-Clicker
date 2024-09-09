@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { CookieContainer } from './CookieContainer'
 import { Container } from './Container'
 import StoreButton from "./StoreButton";
+import UpgradeButton from "./UpgradeButton";
 
 
 export const Game = () =>
@@ -17,6 +18,8 @@ export const Game = () =>
       //Other hooks
       const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
       const [clickEffects, setClickEffects] = useState([]);
+
+      const [upgrades, setUpgrades] = useState([]);  // Estado para los botones de UPGRADES
 
       const getRandomOffset = (min, max) => Math.random() * (max - min) + min;
 
@@ -91,6 +94,8 @@ export const Game = () =>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
+                <UpgradeButton title={'Click Multiplier'} price={'20'} points={cookieClicks} onButtonClick={incrementMultiplier} />
+                <UpgradeButton title={'Automatic Clciks'} price={'40'} points={cookieClicks} onButtonClick={incrementAutomaticMultiplier}/>
               </Container>
           </div>
 
