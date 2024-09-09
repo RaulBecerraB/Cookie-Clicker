@@ -13,7 +13,11 @@ export const Game = () =>
       const [cookieClicks,setCookieClicks] = useState(0)
       //Power Ups
       const [clickMultiplier,setMultiplier] = useState(1)
+      const [clickMultPrice,setClickMultPrice] = useState(5)
+
       const [automaticMultiplier,setAutomaticMultiplier] = useState(0)
+      const [autoClickPrice, setAutoClickPrice] = useState(8)
+
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
       //Click handling hooks
       const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
@@ -62,7 +66,21 @@ export const Game = () =>
         }
 
         return clickEffect
-      } 
+      }
+
+      const upgradeClickMultiplier = () =>
+      {
+        incrementMultiplier()
+        setClickMultPrice(clickMultPrice+10)
+        setCookieClicks(cookieClicks - clickMultPrice)
+      }
+
+      const upgradeAutomaticClicks = () =>
+      {
+        incrementAutomaticMultiplier()
+        setAutoClickPrice(autoClickPrice+20)
+        setCookieClicks(cookieClicks - autoClickPrice)
+      }
     
       const incrementMultiplier = () => setMultiplier(clickMultiplier + 1)
       const incrementAutomaticMultiplier = () => setAutomaticMultiplier(automaticMultiplier + 1)
@@ -107,13 +125,13 @@ export const Game = () =>
           </div>
           <div className='white-board'>
               <Container title={'STORE'} >
-                <StoreButton title={'Click Multiplier'} price={'5'} points={cookieClicks} onButtonClick={incrementMultiplier}/>
-                <StoreButton title={'Automatic Clicks'} price={'8'} points={cookieClicks} onButtonClick={incrementAutomaticMultiplier}/>
+                <StoreButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier}/>
+                <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
-                <UpgradeButton title={'Click Multiplier'} price={'20'} points={cookieClicks} onButtonClick={incrementMultiplier} />
-                <UpgradeButton title={'Automatic Clciks'} price={'40'} points={cookieClicks} onButtonClick={incrementAutomaticMultiplier}/>
+                <UpgradeButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier} />
+                <UpgradeButton title={'Automatic Clciks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>
           </div>
 
