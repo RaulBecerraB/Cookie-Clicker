@@ -15,7 +15,7 @@ export const Game = () =>
       const [clickMultiplier,setMultiplier] = useState(1)
       const [automaticMultiplier,setAutomaticMultiplier] = useState(0)
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
-      //Other hooks
+      //Click handling hooks
       const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
       const [clickEffects, setClickEffects] = useState([]);
 
@@ -23,28 +23,46 @@ export const Game = () =>
 
       const getRandomOffset = (min, max) => Math.random() * (max - min) + min;
 
-
       const incrementClickCounter = (e) => {
         setCookieClicks(cookieClicks + clickMultiplier + temporalPowerUp)
+        handleClickAnimation(e)
+      }
 
-        // Genera un desplazamiento aleatorio para x e y
-      const randomXOffset = getRandomOffset(-20, 20);  // Variación en la posición X
-      const randomYOffset = getRandomOffset(-20, 20);  // Variación en la posición Y
+      const handleClickAnimation = (e) =>
+      {
+        const randomOffsets =
+        {
+          x: getRandomOffset(-20,20),
+          y: getRandomOffset(-20,20)  
+        }
 
-      const newClickEffect = {
-       id: Date.now(),  // Genera un ID único basado en el tiempo actual
-       x: e.clientX + randomXOffset,    // Añade desplazamiento aleatorio en X
-       y: e.clientY + randomYOffset,    // Añade desplazamiento aleatorio en Y
-       multiplier: clickMultiplier,
-       };
+        const newClickEffect = newEffect(e,randomOffsets)
 
-       setClickEffects([...clickEffects, newClickEffect]);
-     
+        setClickEffects([...clickEffects, newClickEffect]);
+
+        deletePreviousEffectsAfterSeconds(2,newClickEffect) 
+      }
+
+      const deletePreviousEffectsAfterSeconds = (seconds,newClickEffect) =>
+      {
         // Elimina el número después de 2 segundos
-       setTimeout(() => {
+        setTimeout(() => {
           setClickEffects((prev) => prev.filter(effect => effect.id !== newClickEffect.id));
-        }, 2000);
-      };
+        }, seconds * 1000);
+      }
+
+      const newEffect = (e,randomOffsets) =>
+      {
+        const clickEffect =
+        {
+          id: Date.now(),  
+          x: e.clientX + randomOffsets.x,    
+          y: e.clientY + randomOffsets.y,    
+          multiplier: clickMultiplier,
+        }
+
+        return clickEffect
+      } 
     
       const incrementMultiplier = () => setMultiplier(clickMultiplier + 1)
       const incrementAutomaticMultiplier = () => setAutomaticMultiplier(automaticMultiplier + 1)
