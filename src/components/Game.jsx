@@ -9,33 +9,31 @@ import StoreButton from "./StoreButton";
 export const Game = () =>
     {
       const [cookieClicks,setCookieClicks] = useState(0)
-      const [multiplier,setMultiplier] = useState(1)
+
+      const [clickMultiplier,setMultiplier] = useState(1)
+      const [automaticMultiplier,setAutomaticMultiplier] = useState(0)
       const [temporalPowerUp,setTemporalPowerUp] = useState(0)
-      const [AutomaticClicksEnabled,setAutomaticClicksEnabled] = useState(false)
       
       const incrementClickCounter = () => {
-        setCookieClicks(cookieClicks + multiplier + temporalPowerUp)
+        setCookieClicks(cookieClicks + clickMultiplier + temporalPowerUp)
       };
     
-      const incrementMultiplier = () => setMultiplier(multiplier + 1)
+      const incrementMultiplier = () => setMultiplier(clickMultiplier + 1)
+      const incrementAutomaticMultiplier = () => setAutomaticMultiplier(automaticMultiplier + 1)
     
-      const enableAutomaticClicks = () => setAutomaticClicksEnabled(true)
-
-      const startAutomaticClicks = () => setInterval(() => { setCookieClicks(cookieClicks + 1);}, 1000)
-      
-
-      const isAutomaticClicksEnabled = () => AutomaticClicksEnabled ? true : false
+      const startAutomaticClicks = () => setInterval(() => {setCookieClicks(prevClicks => prevClicks + automaticMultiplier);}, 1000)
+      const isAutomaticClicksEnabled = () => automaticMultiplier > 0;
 
       // useEffect creates just ONE interval instead of multiple intervals per render.
       useEffect(() => {
         let interval;
-        if (isAutomaticClicksEnabled()) {
+
+        if (isAutomaticClicksEnabled())
           interval = startAutomaticClicks();
-        }
-    
+      
         // Limpia el intervalo cuando se desactiva el automático o cuando se desmonta el componente
         return () => clearInterval(interval);
-      }, [isAutomaticClicksEnabled]); // Escucha cambios en automaticClicksEnabled
+      }, [automaticMultiplier]); // Escucha cambios en automaticClicksEnabled
 
       return(
         <>
@@ -46,7 +44,7 @@ export const Game = () =>
           <div className='white-board'>
               <Container title={'STORE'} >
                 <StoreButton title={'Click Multiplier'} price={'5'} points={cookieClicks} onButtonClick={incrementMultiplier}/>
-                <StoreButton title={'Automatic Clicks'} price={'8'} points={cookieClicks} onButtonClick={enableAutomaticClicks}/>
+                <StoreButton title={'Automatic Clicks'} price={'8'} points={cookieClicks} onButtonClick={incrementAutomaticMultiplier}/>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'UPGRADES'}>
