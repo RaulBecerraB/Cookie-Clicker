@@ -34,9 +34,15 @@
 .text-container 
 {
     text-align: center;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background-color-orange);
     padding: var(--padding-small);
     width: auto;
+    display: flex;
+    gap: 10px;
+    
+
 }
 
 .counter-container 

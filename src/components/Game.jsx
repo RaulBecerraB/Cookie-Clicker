@@ -125,7 +125,7 @@ export const Game = () =>
           <div className='white-board'>
               <Container title={'UPGRADES'} >
                 <UpgradeButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier} />
-                <UpgradeButton title={'Automatic Clciks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
+                <UpgradeButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
               <Container title={'STORE'}>
