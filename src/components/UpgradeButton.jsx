@@ -17,14 +17,19 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
       if(canAffordPurchase())
       {
         processPurchase()
-        setButtonLevel(buttonLevel + 1)
       }
+    }
+
+    const levelUpButton = () =>
+    {
+      setButtonLevel(buttonLevel + 1)
     }
     
     const processPurchase = () =>
     {
       // This uses the button once and then disables it
       triggerButtonAnimation();
+      levelUpButton()
       buttonCallback();
     }
   

@@ -54,7 +54,6 @@ export const Game = () =>
           setClickEffects((prev) => prev.filter(effect => effect.id !== newClickEffect.id));
         }, seconds * 1000);
       }
-
       const newEffect = (e,randomOffsets) =>
       {
         const clickEffect =
