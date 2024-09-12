@@ -122,12 +122,12 @@ export const Game = () =>
              <h2>Cookie Clicker Game!</h2>
           </div>
           <div className='white-board'>
-              <Container title={'UPGRADES'} icon={"./src/assets/storeSVG.svg"} >
+              <Container title={'UPGRADES'} icon={"./src/assets/bolt.svg"} >
                 <UpgradeButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier} />
                 <UpgradeButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>
               <CookieContainer points = {cookieClicks} onCookieClick={incrementClickCounter}/>
-              <Container title={'STORE'}>
+              <Container title={'STORE'} icon={"./src/assets/storeSVG.svg"} >
                 {/* HAY QUE REPLANTEAR LOS BOTONES DE TIENDA
                 <StoreButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier}/>
                 <StoreButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>*/}
