@@ -122,7 +122,7 @@ export const Game = () =>
              <h2>Cookie Clicker Game!</h2>
           </div>
           <div className='white-board'>
-              <Container title={'UPGRADES'} >
+              <Container title={'UPGRADES'} icon={"./src/assets/storeSVG.svg"} >
                 <UpgradeButton title={'Click Multiplier'} price={clickMultPrice} points={cookieClicks} onButtonClick={upgradeClickMultiplier} />
                 <UpgradeButton title={'Automatic Clicks'} price={autoClickPrice} points={cookieClicks} onButtonClick={upgradeAutomaticClicks}/>
               </Container>

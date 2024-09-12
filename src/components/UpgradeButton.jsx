@@ -27,7 +27,6 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
     
     const processPurchase = () =>
     {
-      // This uses the button once and then disables it
       triggerButtonAnimation();
       levelUpButton()
       buttonCallback();
@@ -35,15 +34,17 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
   
     const triggerButtonAnimation = () =>
     {
-      enlargeButtonSize();
-      setTimeout(() => resetButtonSize(false), 250);
+      enlargeButtonSize()
+      resetButtonSizeAfterSeconds(0.250)
     }
+
+    const resetButtonSizeAfterSeconds = (seconds) => setTimeout(() => resetButtonSize(), seconds * 1000);
     
-    const enlargeButtonSize = () => setIsClicked(true);
+    const enlargeButtonSize = () => setIsClicked(true)
     
-    const resetButtonSize = () => setIsClicked(false);
+    const resetButtonSize = () => setIsClicked(false)
     
-    const buttonCallback = () => onButtonClick();
+    const buttonCallback = () => onButtonClick()
 
     useEffect(() => {
       if (canAffordPurchase())

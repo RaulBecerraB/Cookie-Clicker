@@ -48,7 +48,7 @@
       transform: scale(1);
     }
   }
-  
+
   .cookie-clicked {
     animation: clickAnimation 0.2s ease-in-out;
   }
