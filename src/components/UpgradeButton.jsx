@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import cookieSVG from '../assets/cookie.svg'
 
 const UpgradeButton = ({title,price,points,onButtonClick}) => {
     const [isClicked, setIsClicked] = useState(false)
@@ -67,7 +68,7 @@ const UpgradeButton = ({title,price,points,onButtonClick}) => {
         </div>
         <div style={{fontSize:'1.0rem',fontWeight:'semi-bold',marginTop:'0.5rem'}}>
           {price}
-          <img src="./src/assets/cookie.svg" alt="cookie" width='15' height='15' style={{marginLeft:'0.5rem',marginBottom:'-0.1rem'}}/>
+          <img src={cookieSVG} alt="cookie" width='15' height='15' style={{marginLeft:'0.5rem',marginBottom:'-0.1rem'}}/>
           {' Lvl   ' + buttonLevel}
         </div>
       </button>
