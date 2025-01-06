@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cookieSVG from '../assets/cookie.svg'
 
 export const Cookie = ({onCookieClick}) =>
 {
@@ -24,7 +25,7 @@ export const Cookie = ({onCookieClick}) =>
   
     return (
       <div onClick={handleClick} className={isClicked ? 'cookie-clicked' : ''}>
-        <img src="./src/assets/cookie.svg" alt="cookie" width='150' height='150' />
+        <img src={cookieSVG} alt="cookie" width='150' height='150' />
       </div>
     )
 }
